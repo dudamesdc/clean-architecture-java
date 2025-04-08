@@ -1,7 +1,7 @@
 package com.mesdc.mobilis.infra.security;
 
-import com.mesdc.mobilis.repositories.UserRepository;
 import com.mesdc.mobilis.domain.user.User;
+import com.mesdc.mobilis.repositories.UserRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -19,9 +19,9 @@ import java.util.Collections;
 @Component
 public class SecurityFilter extends OncePerRequestFilter {
     @Autowired
-    TokenService tokenService;
-    @Autowired
     UserRepository userRepository;
+    @Autowired
+    TokenService tokenService;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
